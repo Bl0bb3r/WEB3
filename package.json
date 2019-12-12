@@ -1,0 +1,35 @@
+{
+  "name": "dual-n-back",
+  "version": "0.1.0",
+  "homepage": "https://hindol.github.io/dual-n-back",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts-ts": "2.16.0",
+    "reactstrap": "^6.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/lodash": "^4.14.109",
+    "@types/node": "^10.3.0",
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.5",
+    "@types/reactstrap": "^5.0.27",
+    "gh-pages": "^1.2.0",
+    "typescript": "^2.9.1"
+  }
+}
