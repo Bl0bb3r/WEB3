@@ -12,6 +12,8 @@ export interface IState {
   score: number;
 }
 
+//
+
 class App extends React.Component<{}, IState> {
 
   constructor(props: any) {
