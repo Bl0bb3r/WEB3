@@ -11,13 +11,16 @@ import { Formik } from "formik";
 import * as React from "react";
 import "./Login.css";
 
-interface LoginValues {
+interface RegisterValues {
+  Firstname: string;
+  Lastname: string;
+  Nickname: string;
   Email: string;
   Password: string;
 }
 
 interface Props {
-  onSubmit: (values: LoginValues) => void;
+  onSubmit: (values: RegisterValues) => void;
 }
 
 //https://github.com/mui-org/material-ui/blob/master/docs/src/pages/getting-started/templates/sign-in/SignIn.js
@@ -51,7 +54,13 @@ const LoginForm: React.FC<Props> = ({ onSubmit }) => {
   const classes = useStyles();
   return (
     <Formik
-      initialValues={{ Email: "", Password: "" }}
+      initialValues={{
+        Firstname: "",
+        Lastname: "",
+        Nickname: "",
+        Email: "",
+        Password: ""
+      }}
       onSubmit={values => {
         onSubmit(values);
       }}
@@ -67,6 +76,39 @@ const LoginForm: React.FC<Props> = ({ onSubmit }) => {
               Sign in
             </Typography>
             <form className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="Firstname"
+                label="Firstname"
+                type="Firstname"
+                id="Firstname"
+                autoComplete="current-Firstname"
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="Lastname"
+                label="Lastname"
+                type="Lastname"
+                id="Lastname"
+                autoComplete="current-Lastname"
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="Nickname"
+                label="Nickname"
+                type="Nickname"
+                id="Nickname"
+                autoComplete="current-Nickname"
+              />
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -89,6 +131,7 @@ const LoginForm: React.FC<Props> = ({ onSubmit }) => {
                 id="Password"
                 autoComplete="current-password"
               />
+
               <Button
                 type="submit"
                 fullWidth
@@ -119,4 +162,4 @@ const LoginForm: React.FC<Props> = ({ onSubmit }) => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
