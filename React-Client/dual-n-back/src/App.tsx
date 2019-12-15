@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Button, Col, Container, Row } from 'reactstrap';
 import './App.css';
 import Game from './Game';
+import LoginForm from './Login';
 
 //import logo from './logo.svg';
 
@@ -59,6 +60,11 @@ class App extends React.Component<{}, IState> {
             </Col>
           </Row>
         </Container>
+
+        {/* login form test */}
+        <div style ={{textAlign: "center"}}>
+          <LoginForm onSubmit = {(({Email, Password})=>{})}></LoginForm>
+        </div>
       </div>
     );
   }
