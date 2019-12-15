@@ -40,6 +40,12 @@ export default function ButtonAppBar() {
           <Button href="/login" color="inherit">
             Login
           </Button>
+          <Button href="/register" color="inherit">
+            Register
+          </Button>
+          <Button href="/" color="secondary">
+            Home
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

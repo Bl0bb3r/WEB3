@@ -7,7 +7,6 @@ class App extends React.Component<{}, {}> {
   public render() {
     return (
       <div className="Login">
-        {/* login form test */}
         <div style={{ textAlign: "center" }}>
           <LoginForm
             onSubmit={({ Email, Password }) => {
