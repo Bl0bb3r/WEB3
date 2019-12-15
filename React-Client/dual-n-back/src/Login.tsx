@@ -1,53 +1,21 @@
-import { Button, TextField } from '@material-ui/core';
-import { Form, Formik } from 'formik';
-import * as React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import * as React from 'react';
+import LoginForm from './LoginForm';
 
-interface LoginValues{
-    Email: string;
-    Password: string;
-}
+class App extends React.Component<{}, {}> {
 
-interface Props{
-    onSubmit: (values: LoginValues) => void;
-}
-//inspired by https://www.youtube.com/watch?v=6VmVYi9yrAA
-const LoginForm: React.FC<Props> = ({onSubmit}) => {
-    return (
-    <Formik initialValues ={{Email:"", Password: ""}}
-     onSubmit={values =>{
-        onSubmit(values);
-    }}>
-    {({values, handleChange, handleBlur}) =>(
-        <Form>
-            <div>
-                <TextField
-                    name="Email" 
-                    value = {values.Email} 
-                    onChange={handleChange} 
-                    onBlur = {handleBlur}
-                    placeholder = "Email"
-                />
-            </div>
-            <br/>
-            <div>
-                <TextField 
-                name="Password"
-                value = {values.Password}
-                onChange={handleChange} 
-                onBlur = {handleBlur}
-                type = "password"
-                placeholder = "password"
-                />
-            </div>
-            <br/>
-            <Button type="submit">Login</Button>
-            <pre>
-                {JSON.stringify(values, null, 2)}
-            </pre>
-        </Form>
-    )}
-    </Formik>
-    );
+    public render() {
+        return (
+          <div className="Login">
 
+                      {/* login form test */}
+        <div style ={{textAlign: "center"}}>
+          <LoginForm onSubmit = {(({Email, Password})=>{
+            // probably going to send to API endpoint and check if user exists
+            console.log(Email, Password);
+          })}></LoginForm>
+        </div>
+      </div>
+        );
+    }
 }
-export default LoginForm

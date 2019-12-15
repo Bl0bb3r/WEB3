@@ -4,12 +4,12 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import Login from './Login';
+import Login from './LoginForm';
 
 const routing = (
   <Router>
     <div>
-      <Route path="/" component={App}/>
+      <Route exact path="/" component={App}/>
       <Route path="/login" component={Login}/>
     </div>
   </Router>
