@@ -63,7 +63,10 @@ class App extends React.Component<{}, IState> {
 
         {/* login form test */}
         <div style ={{textAlign: "center"}}>
-          <LoginForm onSubmit = {(({Email, Password})=>{})}></LoginForm>
+          <LoginForm onSubmit = {(({Email, Password})=>{
+            // probably going to send to API endpoint and check if user exists
+            console.log()
+          })}></LoginForm>
         </div>
       </div>
     );

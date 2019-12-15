@@ -40,7 +40,7 @@ const LoginForm: React.FC<Props> = ({onSubmit}) => {
                 />
             </div>
             <br/>
-            <Button type = "submit">Login</Button>
+            <Button type="submit">Login</Button>
             <pre>
                 {JSON.stringify(values, null, 2)}
             </pre>
