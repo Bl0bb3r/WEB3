@@ -14,13 +14,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 //import logo from './logo.svg';
 
-//TODO need to include the theme provider higher order component I think
-//https://material-ui.com/styles/basics/#higher-order-component-api
 const useStyles = makeStyles(theme => ({
   card: {
     marginbottom: 12,
     marginright: 12,
-    padding: 20
+    padding: 20,
+    minWidth: 350,
+    maxWidth: 550,
+    minHeight: 250
   },
   whitecardblue: {
     color: "#004562"
@@ -85,11 +86,11 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <ButtonAppBar />
-      <Container maxWidth="md" style={{ paddingTop: "80px" }}>
+      <Container maxWidth="lg" style={{ paddingTop: "150px" }}>
         {/* End hero unit */}
         <Grid container spacing={4}>
           {homeInfo.map(homeInfos => (
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={12} md={6} lg={4}>
               <Card className={classes.card}>
                 <CardMedia
                   image="https://source.unsplash.com/random"
