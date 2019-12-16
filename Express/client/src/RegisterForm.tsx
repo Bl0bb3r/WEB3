@@ -88,7 +88,7 @@ export const RegisterForm: React.FC<Props> = ({ onSubmit }) => {
                   value={values.Firstname}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  label="Firstname"
+                  label="First name"
                   type="Firstname"
                   id="Firstname"
                   autoComplete="current-Firstname"
@@ -102,7 +102,7 @@ export const RegisterForm: React.FC<Props> = ({ onSubmit }) => {
                   value={values.Lastname}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  label="Lastname"
+                  label="Last name"
                   type="Lastname"
                   id="Lastname"
                   autoComplete="current-Lastname"

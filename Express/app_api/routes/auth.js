@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   //Check if email is in db
-  const user = await User.findOne({ email: req.body.email });
+  const user = await User.findOne({ Email: req.body.Email });
   if (!user) return res.status(400).send("Email does not exist");
   //check password
   const passwordIsValid = await bcrypt.compare(

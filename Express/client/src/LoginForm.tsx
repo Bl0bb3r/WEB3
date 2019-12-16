@@ -105,7 +105,7 @@ export const LoginForm: React.FC<Props> = ({ onSubmit }) => {
                   variant="contained"
                   color="primary"
                   className={classes.submit}
-                  onClick={event => (window.location.href = "/")}
+                  //onClick={event => (window.location.href = "/")}
                 >
                   Sign In
                 </Button>

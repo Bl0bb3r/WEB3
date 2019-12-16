@@ -27,47 +27,84 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function ButtonAppBar() {
   const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Dual-N-Back
-          </Typography>
-          <Button
-            className={classes.buttons}
-            onClick={event => (window.location.href = "/login")}
-            color="inherit"
-          >
-            Login
-          </Button>
-          <Button
-            className={classes.buttons}
-            onClick={event => (window.location.href = "/register")}
-            color="inherit"
-          >
-            Register
-          </Button>
-          <Button
-            className={classes.buttons}
-            onClick={event => (window.location.href = "/")}
-            color="secondary"
-          >
-            Home
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  if (localStorage.length > 0) {
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Dual-N-Back
+            </Typography>
+            <Button
+              className={classes.buttons}
+              onClick={event => (
+                localStorage.clear(), (window.location.href = "/")
+              )}
+              color="inherit"
+            >
+              Logout
+            </Button>
+            <Button
+              className={classes.buttons}
+              onClick={event => (window.location.href = "/")}
+              color="secondary"
+            >
+              Home
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  } else {
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Dual-N-Back
+            </Typography>
+            <Button
+              className={classes.buttons}
+              onClick={event => (window.location.href = "/login")}
+              color="inherit"
+            >
+              Login
+            </Button>
+            <Button
+              className={classes.buttons}
+              onClick={event => (window.location.href = "/register")}
+              color="inherit"
+            >
+              Register
+            </Button>
+            <Button
+              className={classes.buttons}
+              onClick={event => (window.location.href = "/")}
+              color="secondary"
+            >
+              Home
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 // const useStyles = makeStyles((theme: Theme) => ({
