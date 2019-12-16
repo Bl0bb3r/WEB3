@@ -39,9 +39,6 @@ app.use("/api", routesApi);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/workout", workoutRoute);
-app.get("*", (req, res) => {
-  res.sendFile("build/index.html", { root: __dirname });
-});
 
 //app.use(require("./corsfix"));
 
