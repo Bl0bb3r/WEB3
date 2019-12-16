@@ -10,7 +10,6 @@ const Login = () => {
       <LoginForm
         onSubmit={({ Email, Password }) => {
           // probably going to send to API endpoint and check if user exists
-          console.log(Email, Password);
           var User = {
             Email: Email,
             Password: Password
