@@ -29,7 +29,10 @@ const Login = () => {
               if (res.status == 200) {
                 //window.location.href = "/login";
                 console.log(res);
-                console.log(res.data);
+                console.log(Object.values(res.data)[0]);
+                let key = Object.values(res.data)[0];
+                sessionStorage.setItem(JSON.stringify(key), User.Email);
+                window.location.href = "/";
               } else {
                 window.location.href = "/login";
               }

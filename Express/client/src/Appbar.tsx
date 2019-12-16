@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function ButtonAppBar() {
   const classes = useStyles();
-  if (localStorage.length > 0) {
+  if (sessionStorage.length > 0) {
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -46,7 +46,7 @@ export default function ButtonAppBar() {
             <Button
               className={classes.buttons}
               onClick={event => (
-                localStorage.clear(), (window.location.href = "/")
+                sessionStorage.clear(), (window.location.href = "/")
               )}
               color="inherit"
             >
