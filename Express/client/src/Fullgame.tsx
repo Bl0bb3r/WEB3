@@ -76,7 +76,7 @@ class Fullgame extends React.Component<{}, IState> {
                 </Col>
               </Row>
               <Row>
-                <p>{this.state.score}</p>
+                <p style={{ color: "white" }}>{this.state.score}</p>
               </Row>
             </Col>
           </Row>
