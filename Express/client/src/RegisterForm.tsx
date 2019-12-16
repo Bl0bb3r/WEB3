@@ -156,7 +156,7 @@ export const RegisterForm: React.FC<Props> = ({ onSubmit }) => {
                   variant="contained"
                   color="primary"
                   className={classes.submit}
-                  onClick={event => (window.location.href = "/login")}
+                  //onClick={event => (window.location.href = "/login")}
                 >
                   Register now!
                 </Button>

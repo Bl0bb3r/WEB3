@@ -13,17 +13,19 @@ router.post("/register", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   //Check if email is in db
-  const emailExists = await User.findOne({ email: req.body.email });
+  const emailExists = await User.findOne({ Email: req.body.Email });
   if (emailExists) return res.status(400).send("Email already exists");
 
   //Hashing password
   const salt = await bcrypt.genSalt(10);
-  const hashedPW = await bcrypt.hash(req.body.password, salt);
+  const hashedPW = await bcrypt.hash(req.body.Password, salt);
 
   const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: hashedPW
+    Firstname: req.body.Firstname,
+    Lastname: req.body.Lastname,
+    Nickname: req.body.Nickname,
+    Email: req.body.Email,
+    Password: hashedPW
   });
   try {
     const savedUser = await user.save();
@@ -44,8 +46,8 @@ router.post("/login", async (req, res) => {
   if (!user) return res.status(400).send("Email does not exist");
   //check password
   const passwordIsValid = await bcrypt.compare(
-    req.body.password,
-    user.password
+    req.body.Password,
+    user.Password
   );
   if (!passwordIsValid) return res.status(400).send("Wrong password");
 
