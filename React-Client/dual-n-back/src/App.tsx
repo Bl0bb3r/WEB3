@@ -21,39 +21,21 @@ const useStyles = makeStyles(theme => ({
     padding: 20,
     minWidth: 350,
     maxWidth: 550,
-    minHeight: 250
-  },
-  whitecardblue: {
-    color: "#004562"
+    minHeight: 250,
+    textAlign: "center"
   },
 
-  cardtextwhite: {
-    color: "#5d6f7d"
+  redirection: {
+    marginTop: 20
   },
 
-  specialpurple: {
-    background: "#a2238e"
+  desc: {
+    marginTop: 10
   },
-
-  subpink: {
-    color: "#e1a7da"
-  },
-
-  specialblue: {
-    background: "#004765"
-  },
-
-  subblue: {
-    color: "#71a1b8"
-  },
-
-  whitetext: {
-    color: "white"
-  },
-
   cardtitle: {
     fontweight: 700,
-    marginbottom: 20
+    marginbottom: 20,
+    color: "#004765"
   }
 }));
 
@@ -66,7 +48,6 @@ const homeInfo = [
   },
   {
     title: "Highscores",
-    subheader: "Smartest players",
     description: ["View the best Dual-N-Back players"],
     buttonText: "View List(this routes to the game atm)",
     route: "/game"
@@ -105,8 +86,10 @@ const App: React.FC = () => {
                   >
                     {homeInfos.title}
                   </Typography>
-                  <Typography>{homeInfos.subheader}</Typography> <br />
-                  <Typography>{homeInfos.description}</Typography>
+                  <br />
+                  <Typography className={classes.desc}>
+                    {homeInfos.description}
+                  </Typography>
                 </CardContent>
                 <CardActions
                   style={{
@@ -115,7 +98,12 @@ const App: React.FC = () => {
                     alignItems: "center"
                   }}
                 >
-                  <Button href={homeInfos.route} size="small" color="primary">
+                  <Button
+                    className={classes.redirection}
+                    href={homeInfos.route}
+                    size="small"
+                    color="primary"
+                  >
                     {homeInfos.buttonText}
                   </Button>
                 </CardActions>
