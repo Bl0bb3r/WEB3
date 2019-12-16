@@ -28,8 +28,9 @@ const useStyles = makeStyles(theme => ({
     marginbottom: 12,
     marginright: 12,
     padding: 20,
-    minWidth: 1250,
-    maxWidth: 1500,
+    minWidth: 350,
+    maxWidth: 550,
+    marginLeft: 450,
     minHeight: 250,
     textAlign: "center"
   },
